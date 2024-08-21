@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="section">
+    <div class="section-header">
+        <h1>Bem-vindo ao Meu Blog</h1>
+    </div>
+    <div class="section-content">
+        <h2>Cursos</h2>
+        <ul>
+            {% for curso in cursos %}
+            <li>
+                <h4>{{ curso.nome }}</h4>
+                <p>{{ curso.descricao }}</p>
+                <p><strong>Período:</strong> {{ curso.data_inicio }} - {{ curso.data_fim }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        <h2>Interesses</h2>
+        <ul>
+            {% for interesse in interesses %}
+            <li>
+                <h4>{{ interesse.nome }}</h4>
+                <p>{{ interesse.descricao }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

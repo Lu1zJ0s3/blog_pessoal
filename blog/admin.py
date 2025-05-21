@@ -3,7 +3,7 @@ from .models import Curso, Interesse
 
 @admin.register(Curso)
 class CursoAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'data_inicio', 'data_fim')
+    list_display = ('nome',)
 
 @admin.register(Interesse)
 class InteresseAdmin(admin.ModelAdmin):

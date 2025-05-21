@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Curso, Interesse
+from .models import Curso, Interesse, Sobre
 
 def home(request):
     cursos = Curso.objects.all()
@@ -7,4 +7,5 @@ def home(request):
     return render(request, 'blog/home.html', {'cursos': cursos, 'interesses': interesses})
 
 def sobre(request):
-    return render(request, 'blog/sobre.html')
+    sobre = Sobre.objects.first()  
+    return render(request, 'blog/sobre.html', {'sobre': sobre})
